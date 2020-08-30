@@ -8,5 +8,6 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
 
 FROM scratch
 COPY --from=0 /workspace/hello-server /
+RUN mkdir test
 USER 1001
 ENTRYPOINT ["/hello-server"]
